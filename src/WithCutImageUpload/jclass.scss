@@ -1,0 +1,581 @@
+/**
+ * Create By Steven King on 2019.05.21
+ * 基础css class库定义
+ */
+
+body,
+ul,
+p {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+$h1Color: #04173f; // 标题正黑
+$labelColor: #818999;
+// $textColor: #000031;
+$textColor: #3c4d73;
+$hoverColor: #2196f3; //选中样式
+$bgColor: #f0f3f5;
+$borderColor: #ccd3d9;
+
+// 定位
+// margin
+.auto {
+  margin: 0 auto;
+}
+
+@mixin mt($value) {
+  margin-top: $value;
+}
+
+@mixin mr($value) {
+  margin-right: $value;
+}
+
+@mixin mb($value) {
+  margin-bottom: $value;
+}
+
+@mixin ml($value) {
+  margin-left: $value;
+}
+
+// padding
+@mixin pt($value) {
+  padding-top: $value;
+}
+
+@mixin pr($value) {
+  padding-right: $value;
+}
+
+@mixin pb($value) {
+  padding-bottom: $value;
+}
+
+@mixin pl($value) {
+  padding-left: $value;
+}
+
+// margin 5
+.jm5 {
+  margin: 5px;
+}
+
+.jmt5 {
+  @include mt(5px);
+}
+
+.jmr5 {
+  @include mr(5px);
+}
+
+.jmb5 {
+  @include mb(5px);
+}
+
+.jml5 {
+  @include ml(5px);
+}
+
+// margin 10
+.jm10 {
+  margin: 10px;
+}
+
+.jmt10 {
+  @include mt(10px);
+}
+
+.jmr10 {
+  @include mr(10px);
+}
+
+.jmb10 {
+  @include mb(10px);
+}
+
+.jml10 {
+  @include ml(10px);
+}
+
+// margin 20
+.jm20 {
+  margin: 20px;
+}
+
+.jmt20 {
+  @include mt(20px);
+}
+
+.jmr20 {
+  @include mr(20px);
+}
+
+.jmb20 {
+  @include mb(20px);
+}
+
+.jml20 {
+  @include ml(20px);
+}
+
+// padding 5
+.jp5 {
+  padding: 5px;
+}
+
+.jpt5 {
+  @include pt(5px);
+}
+
+.jpr5 {
+  @include pr(5px);
+}
+
+.jpb5 {
+  @include pb(5px);
+}
+
+.jpl5 {
+  @include pl(5px);
+}
+
+// padding 10
+.jp10 {
+  padding: 10px;
+}
+
+.jpt10 {
+  @include pt(10px);
+}
+
+.jpr10 {
+  @include pr(10px);
+}
+
+.jpb10 {
+  @include pb(10px);
+}
+
+.jpl10 {
+  @include pl(10px);
+}
+
+// padding 20
+.jp20 {
+  padding: 20px;
+}
+
+.jpt20 {
+  @include pt(20px);
+}
+
+.jpr20 {
+  @include pr(20px);
+}
+
+.jpb20 {
+  @include pb(20px);
+}
+
+.jpl20 {
+  @include pl(20px);
+}
+
+// flex
+@mixin jflex {
+  display: flex;
+}
+
+@mixin shrink0 {
+  flex-shrink: 0
+}
+
+.shrink0 {
+  @include shrink0;
+}
+
+// 垂直样式
+@mixin vertical-top {
+  align-items: flex-start;
+}
+
+@mixin vertical-center {
+  align-items: center;
+}
+
+@mixin vertical-bottom {
+  align-items: baseline;
+}
+
+.vertical-top {
+  @include vertical-top;
+}
+
+.vertical-center {
+  @include vertical-center;
+}
+
+.vertical-bottom {
+  @include vertical-bottom;
+}
+
+// 水平样式
+@mixin horizontal-left {
+  justify-content: flex-start;
+}
+
+@mixin horizontal-right {
+  justify-content: flex-end;
+}
+
+@mixin horizontal-center {
+  justify-content: center;
+}
+
+@mixin horizontal-wrap {
+  justify-content: space-between;
+}
+
+@mixin horizontal-wrap-spacing {
+  justify-content: space-around;
+}
+
+.horizontal-start {
+  @include horizontal-left;
+}
+
+.horizontal-right {
+  @include horizontal-right;
+}
+
+.horizontal-center {
+  @include horizontal-center;
+}
+
+.horizontal-wrap {
+  @include horizontal-wrap;
+}
+
+.horizontal-wrap-spacing {
+  @include horizontal-wrap-spacing;
+}
+
+// 水平靠左垂直靠上流式
+.jflex {
+  @include jflex;
+  @include horizontal-left;
+  @include vertical-top;
+}
+
+// 水平垂直居中流式
+.jflex-with-center {
+  @include jflex;
+  @include horizontal-center;
+  @include vertical-center;
+}
+
+// 水平靠左垂直居中流式
+.jflex-start-center {
+  @include jflex;
+  @include horizontal-left;
+  @include vertical-center;
+}
+
+// 水平靠左垂直靠下流式
+.jflex-start-bottom {
+  @include jflex;
+  @include horizontal-left;
+  @include vertical-bottom;
+}
+
+// 水平靠右垂直居中流式
+.jflex-end-center {
+  @include jflex;
+  @include horizontal-right;
+  align-items: center;
+}
+
+// 水平靠右垂直居上流式
+.jflex-end-top {
+  @include jflex;
+  @include horizontal-right;
+  @include vertical-top;
+}
+
+// 水平靠右垂直居下流式
+.jflex-end-bottom {
+  @include jflex;
+  @include horizontal-right;
+  @include vertical-bottom;
+}
+
+// 水平两端对齐流式
+.jflex-wrap {
+  @include jflex;
+  @include horizontal-wrap;
+}
+
+// 水平两端对齐流式
+.jflex-wrap-space {
+  @include jflex;
+  @include horizontal-wrap-spacing;
+}
+
+@mixin f12 {
+  font-size: 12px;
+}
+
+@mixin f13 {
+  font-size: 13px;
+}
+
+@mixin f14 {
+  font-size: 14px;
+}
+
+@mixin f15 {
+  font-size: 15px;
+}
+
+@mixin f16 {
+  font-size: 16px;
+}
+
+@mixin f18 {
+  font-size: 18px;
+}
+
+@mixin f24 {
+  font-size: 24px;
+}
+
+//文字
+.f12 {
+  @include f12;
+}
+
+.f13 {
+  @include f13;
+}
+
+.f14 {
+  @include f14;
+}
+
+.f15 {
+  @include f15;
+}
+
+.f16 {
+  @include f16;
+}
+
+.f18 {
+  @include f18;
+}
+
+.f24 {
+  @include f24;
+}
+
+@mixin ell {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ell {
+  @include ell;
+}
+
+@mixin center {
+  text-align: center;
+}
+
+@mixin cube($value) {
+  width: $value;
+  height: $value;
+}
+
+@mixin line($color) {
+  border-bottom: 1px solid $color;
+}
+
+@mixin border {
+  // box-shadow: 0 0 5px 1px #eee;
+  border: 1px solid #eee;
+}
+
+@mixin h1Color {
+  color: $h1Color;
+}
+
+@mixin labelColor {
+  color: $labelColor;
+}
+
+@mixin textColor {
+  color: $textColor;
+}
+
+@mixin hoverColor {
+  color: $hoverColor;
+}
+
+@mixin bgColor {
+  color: $bgColor;
+}
+
+@mixin borderColor {
+  color: $borderColor;
+}
+
+@mixin inline {
+  display: inline;
+}
+
+@mixin block {
+  display: block;
+}
+
+@mixin iblock {
+  display: inline-block;
+}
+
+@mixin none {
+  display: none;
+}
+
+.inline {
+  @include inline;
+}
+
+.block {
+  @include block;
+}
+
+.iblock {
+  @include iblock;
+}
+
+.none {
+  @include none;
+}
+
+@mixin pointer {
+  cursor: pointer;
+}
+
+.pointer {
+  @include pointer;
+}
+
+.h1-color {
+  @include h1Color;
+}
+
+.label-color {
+  @include labelColor;
+}
+
+.text-color {
+  @include textColor;
+}
+
+.hover-color {
+  @include hoverColor;
+}
+
+.bg-color {
+  @include bgColor;
+}
+
+.border-color {
+  @include borderColor;
+}
+
+@mixin tj {
+  text-align: justify;
+  text-align-last: justify;
+}
+
+.tj {
+  @include tj;
+}
+
+.tl {
+  text-align: left;
+}
+
+.tr {
+  text-align: right;
+}
+
+.tc {
+  text-align: center;
+}
+
+.line {
+  border-bottom: 1px solid #eee;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.fw1 {
+  font-weight: 100
+}
+
+.fw2 {
+  font-weight: 200
+}
+
+.fw3 {
+  font-weight: 300
+}
+
+.fw4 {
+  font-weight: 400
+}
+
+.fw5 {
+  font-weight: 500
+}
+
+.border {
+  @include border;
+}
+
+.jhidden {
+  display: none;
+}
+
+.jvisible {
+  display: inherit;
+}
+
+.jform-row {
+  @include jflex;
+
+  .jform-row-item {
+    @include mr(20px);
+  }
+}
+
+.jdivider {
+  @include jflex;
+  @include horizontal-left;
+  @include vertical-center;
+
+  &:before {
+    content: '';
+    border-left: 2px solid $hoverColor;
+    border-radius: 1px;
+    padding-right: 10px;
+    height: 18px;
+  }
+}

@@ -1,0 +1,91 @@
+@import './jclass.scss';
+
+.jui-cut-image-upload {
+  // @include border;
+  background: #fff;
+
+  .jcut-image-box {
+    max-width: max-content;
+  }
+
+  .jcut-crop-box-title {
+    font-size: 18px;
+    color: #000;
+    padding-bottom: 20px;
+  }
+
+  .jcut-crop-box {
+    margin-right: 20px;
+
+    .jcut-crop-upload-box {
+      position: relative;
+      background: #eee;
+      width: 100%;
+      height: 396px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      overflow: hidden;
+
+      .jcut-crop-upload-btn {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+      }
+
+      .jcut-crop-show-box {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+
+        // ReactCrop 样式重写 非常重要 =============
+        .ReactCrop {
+          max-width: 100%;
+          max-height: 100%;
+          min-width: -webkit-fill-available;
+          min-height: -webkit-fill-available;
+          position: absolute;
+          background: none;
+
+          // overflow: auto;
+        }
+
+        .ReactCrop__image {
+          position: absolute;
+          top: 0;
+          left: 0;
+          // width: 100%;
+          // height: 100%;
+        }
+
+        .ReactCrop__crop-selection {
+          border-image-source: none;
+          z-index: 12;
+        }
+
+        // ReactCrop 样式重写 非常重要 =============
+      }
+    }
+  }
+
+  .jcut-preview-box {
+    width: 396px;
+    height: 238px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    background: #eee;
+    position: relative;
+  }
+
+  .jcut-crop-box-footer {
+    .jcut-upload-btn {
+      font-size: 12px;
+      color: #1890ff;
+      margin-right: 20px;
+      text-decoration: none;
+    }
+  }
+
+}
